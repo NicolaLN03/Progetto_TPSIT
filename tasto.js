@@ -1,12 +1,59 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
-import styles from './tastocss';
+import styles from './css/tastocss';
 import {HtmlSpecialChars_decode} from "./htmlspecialchars";
+import Processore from './processore';
 
 //Componente: tasto della tastiera
 export default class Tasto extends Component {
     
-    contiene (pattern, carattere)
+    render() {
+       if("0".indexOf(this.props.caption)>-1){
+           return (
+            <View >
+            <TouchableOpacity style={[styles.tasto, styles.dimensionizero, styles.numero]}
+                onPress={() => Processore.tastopremuto(this.props.caption)}
+            >
+            <Text style={[styles.testo, styles.dimensioni]}>{this.props.caption}</Text>
+            </TouchableOpacity>
+        </View> 
+           );
+       }else if("+-x/=".indexOf(this.props.caption)>-1)
+       {
+           return (
+            <View >
+            <TouchableOpacity style={[styles.tasto, styles.dimensioni, styles.funzione]}
+                onPress={() => Processore.tastopremuto(this.props.caption)}
+            >
+            <Text style={[styles.testo, styles.dimensioni]}>{this.props.caption}</Text>
+            </TouchableOpacity>
+        </View>
+           );
+       }else if("123456789,".indexOf(this.props.caption)>-1){
+        return (
+            <View >
+            <TouchableOpacity style={[styles.tasto, styles.dimensioni, styles.numero]}
+                onPress={() => Processore.tastopremuto(this.props.caption)}
+            >
+            <Text style={[styles.testo, styles.dimensioni]}>{this.props.caption}</Text>
+            </TouchableOpacity>
+        </View>
+           );
+       }else{
+        return (
+            <View >
+            <TouchableOpacity style={[styles.tasto, styles.dimensioni, styles.funzioneb]}
+                onPress={() => Processore.tastopremuto(this.props.caption)}
+            >
+            <Text style={[styles.testo, styles.dimensioni]}>{this.props.caption}</Text>
+            </TouchableOpacity>
+        </View>
+           );
+       }
+    }
+
+
+   /* contiene (pattern, carattere)
     {
         return pattern.indexOf(carattere);
     }
@@ -73,6 +120,6 @@ export default class Tasto extends Component {
       { //default
         return this.renderFunzione();
       }
-  } 
+  } */
 }
 

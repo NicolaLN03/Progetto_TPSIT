@@ -9,7 +9,7 @@ export default StyleSheet.create({
         fontFamily: 'Verdana',
         fontWeight: 'bold',
         fontSize: 40,
-        color: 'black',
+        color: '#CFCFCF',
     },
     dimensioni: {
         height: 80,
