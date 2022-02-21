@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import styles from './css/tastocss';
-import {HtmlSpecialChars_decode} from "./htmlspecialchars";
 import Processore from './processore';
 
 //Componente: tasto della tastiera

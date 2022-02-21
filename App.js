@@ -6,6 +6,12 @@ import Tastiera from './tastiera';
 import Dysaply from './display'
 
 export default function App() {
+
+  //Definisco le variabili globali
+  global.miodisplay="";     //Memoria display
+  global.accumulatore="0";  //Memoria di calcolo
+  global.socravrivi=1;      //Sovrascrive il computo del display
+
   return (
     <View style={styles.calcolatrice}>
       <Dysaply caption='0'></Dysaply>

@@ -9,7 +9,7 @@ export default StyleSheet.create({
         textAlignVertical: 'auto',
         fontFamily: 'Verdana',
         fontWeight: 'normal',
-        fontSize: 110,
+        fontSize: 60,
         color: '#CECECE',
     },
     dimensioni: {
